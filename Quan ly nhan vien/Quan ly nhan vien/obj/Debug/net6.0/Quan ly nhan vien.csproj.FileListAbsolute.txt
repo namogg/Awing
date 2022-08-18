@@ -1,0 +1,15 @@
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\bin\Debug\net6.0\Quan ly nhan vien.exe
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\bin\Debug\net6.0\Quan ly nhan vien.deps.json
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\bin\Debug\net6.0\Quan ly nhan vien.runtimeconfig.json
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\bin\Debug\net6.0\Quan ly nhan vien.dll
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\bin\Debug\net6.0\Quan ly nhan vien.pdb
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.csproj.AssemblyReference.cache
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.GeneratedMSBuildEditorConfig.editorconfig
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.AssemblyInfoInputs.cache
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.AssemblyInfo.cs
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.csproj.CoreCompileInputs.cache
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.dll
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\refint\Quan ly nhan vien.dll
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.pdb
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\Quan ly nhan vien.genruntimeconfig.cache
+C:\Awing\Quan ly nhan vien\Quan ly nhan vien\obj\Debug\net6.0\ref\Quan ly nhan vien.dll
