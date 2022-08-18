@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj": {}
+    "C:\\Awing\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj": {}
   },
   "projects": {
-    "C:\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj": {
+    "C:\\Awing\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj",
+        "projectUniqueName": "C:\\Awing\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj",
         "projectName": "Quan ly nhan vien",
-        "projectPath": "C:\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj",
+        "projectPath": "C:\\Awing\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\Quan ly nhan vien.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\obj\\",
+        "outputPath": "C:\\Awing\\Awing\\Quan ly nhan vien\\Quan ly nhan vien\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
