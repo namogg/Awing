@@ -28,7 +28,8 @@ namespace Quan_ly_nhan_vien
             Console.Write("Professional skill: ");
             Console.WriteLine(e.ProSkill);
             Console.WriteLine("==============================");
-            Certificate.show(e.LISTCertificates);
+            Certificate c = new Certificate();
+            c.show(e.LISTCertificates);
         }
         public Experience()
         {
@@ -44,7 +45,7 @@ namespace Quan_ly_nhan_vien
             ProSkill = pro;
             LISTCertificates = c
 ;       }
-        public Experience input_NV()
+        public Experience input_Employee()
         {
             Console.WriteLine("Nhap ten:");
             string Name = Console.ReadLine();
@@ -55,9 +56,9 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap dia chi:");
             string adress = Console.ReadLine();
             Console.WriteLine("Nhap ngay sinh:");
-            DateTime Birth = program.input_date();
+            DateTime Birth = inputcheck.input_date();
             Console.WriteLine("Nhap so nam kinb nghiemn:");
-            int ExpInYear = Convert.ToInt32(Console.ReadLine());
+            int ExpInYear = inputcheck.input_num();
             Console.WriteLine("Nhap ki nang:");
             string ProSkill = Console.ReadLine();
             List<Certificate> L = Certificate.Input_Certificates();

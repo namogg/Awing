@@ -30,7 +30,7 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Ngay tot nghiep");
             Console.WriteLine(e.GraduationDate);
         }
-        public static void show(List<Certificate> e)
+        public void show(List<Certificate> e)
         {
             for(int i = 0; i < e.Count; i++)
             {
@@ -43,7 +43,7 @@ namespace Quan_ly_nhan_vien
         {
             List<Certificate> Temp = new List<Certificate>();
             Console.WriteLine("Nhap so Certificate");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int n = inputcheck.input_num();
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine("Nhap bang thu:" + (i+1));
@@ -52,7 +52,7 @@ namespace Quan_ly_nhan_vien
                 Console.WriteLine("Nhap xep hang bang");
                 string CertificateRank = Console.ReadLine();
                 Console.WriteLine("Nhap ngay tot nghiep");
-                DateTime GraduationDate = program.input_date();
+                DateTime GraduationDate = inputcheck.input_date();
                 Temp.Add(new Certificate(CertificateName, CertificateRank, GraduationDate));
             }
             return Temp;

@@ -17,6 +17,7 @@ namespace Quan_ly_nhan_vien
         public List<Certificate> LISTCertificates;
         public void Show(Employee e)
         {
+
         }
     }
 }

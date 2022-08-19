@@ -5,14 +5,8 @@ namespace Quan_ly_nhan_vien
 {
     public class Intern : Employee
     {
-        [StringLength(30, MinimumLength = 1)]
-        [Required]
         public string Majors { get; set; }
-        [StringLength(30, MinimumLength = 1)]
-        [Required]
         public string Semester { get; set; }
-        [StringLength(20, MinimumLength = 1)]
-        [Required]
         public string University_name { get; set; }
         //In ra thong tin nhan vien 
         public void Show(Intern e)
@@ -34,7 +28,8 @@ namespace Quan_ly_nhan_vien
             Console.Write("Ten truong dai hoc ");
             Console.WriteLine(e.University_name);
             Console.WriteLine("==============================");
-            Certificate.show(e.LISTCertificates);
+            Certificate c = new Certificate();
+            c.show(e.LISTCertificates);
         }
         public Intern()
         {
@@ -52,7 +47,7 @@ namespace Quan_ly_nhan_vien
             LISTCertificates = c;
         }
         // Nhap thong tin cho nhan vien moi
-        public Intern input_NV()
+        public Intern input_Employee()
         {
             Console.WriteLine("Nhap ten:");
             string Name = Console.ReadLine();
@@ -63,7 +58,7 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap dia chi:");
             string adress = Console.ReadLine();
             Console.WriteLine("Nhap ngay sinh:");
-            DateTime Birth = program.input_date();
+            DateTime Birth = inputcheck.input_date();
             Console.WriteLine("Nhap khoa:");
             string Majors = Console.ReadLine();
             Console.WriteLine("Nhap khoa hoc:");

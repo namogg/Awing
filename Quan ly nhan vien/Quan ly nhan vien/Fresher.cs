@@ -45,12 +45,12 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine(e.Education);
             Console.Write("Ngay tot nghiep: ");
             Console.WriteLine(e.Graduation_date);
-
-            Certificate.show(e.LISTCertificates);
+            Certificate c = new Certificate();
+            c.show(e.LISTCertificates);
         }
         
         
-        public Fresher input_NV()
+        public Fresher input_Employee()
         {
             Console.WriteLine("Nhap ten:");
             string Name = Console.ReadLine();
@@ -61,9 +61,9 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap dia chi:");
             string adress = Console.ReadLine();
             Console.WriteLine("Nhap ngay sinh:");
-            DateTime Birth = program.input_date();
+            DateTime Birth = inputcheck.input_date();
             Console.WriteLine("Nhap ngay tot nghiep:");
-            DateTime Graduation_date = program.input_date();
+            DateTime Graduation_date = inputcheck.input_date();
             Console.WriteLine("Nhap xep hang tot nghiep:");
             string Graduation_rank = Console.ReadLine();
             Console.WriteLine("Nhap truong tot nghiep:");
