@@ -17,7 +17,7 @@ namespace Quan_ly_nhan_vien
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Ngay sinh khong hop le, vui long nhap lai");
+                    Console.WriteLine("Ngay thang khong hop le, vui long nhap lai");
                     return input_date();
                 }
             return date;
@@ -36,5 +36,16 @@ namespace Quan_ly_nhan_vien
                 };
             return n;
         }
+        public static int input_exprience_years()
+        {
+            int n = input_num();
+            if (n >= program.require_years)
+            {
+                return n;
+            }
+            Console.WriteLine("So nam kinh nghiem phai tren " + program.require_years);
+            return input_exprience_years();
+        }
+
     }
 }

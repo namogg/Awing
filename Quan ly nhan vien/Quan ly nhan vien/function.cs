@@ -31,7 +31,7 @@ namespace Quan_ly_nhan_vien
             switch (n)
             {
                 case 1:
-                    Fresher e = new Fresher();
+                    Fresher_exp e = new Fresher_exp();
                     employees_List.Add(e.input_Employee());
                     break;
                 case 2:
@@ -104,11 +104,30 @@ namespace Quan_ly_nhan_vien
             }
             Console.Clear();
             if (employees_List[i - 1] is Fresher)
-                ((Fresher)employees_List[i - 1]).Show((Fresher)employees_List[i - 1]);
+            {
+                ((Fresher_exp)employees_List[i - 1]).Show((Fresher_exp)employees_List[i - 1]);
+            }
             if (employees_List[i - 1] is Intern)
                 ((Intern)employees_List[i - 1]).Show((Intern)employees_List[i - 1]);
             if (employees_List[i - 1] is Experience)
                 ((Experience)employees_List[i - 1]).Show((Experience)employees_List[i - 1]);
+        }
+        public static void promote_employee(ref List<Employee> e)
+        {
+            Console.WriteLine("=============Danh sach nhan vien duoc thang chuc=================");
+            for (int i = 0; i < e.Count; i++)
+            {   if (e[i] is Fresher_exp) 
+                {
+                    Fresher_exp f = (Fresher_exp)(Fresher)e[i];
+                    if (f.total_worktime >= 5)
+                    {   
+                        Console.WriteLine(i + 1 + "." + f.Name +" || So nam kinh nghiem:" +f.total_worktime);
+                        Console.WriteLine("Nhap ki nang chuyen mon cho nhan vien:");
+                        string pro_skill = Console.ReadLine();
+                        e[i] = new Experience(f.Name, f.room, f.gender, f.adress, f.Birth, f.total_worktime, pro_skill, f.LISTCertificates); 
+                    }
+                }
+            }
         }
     }
 }

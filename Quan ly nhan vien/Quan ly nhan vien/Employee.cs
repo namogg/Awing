@@ -14,7 +14,7 @@ namespace Quan_ly_nhan_vien
         public string gender { get; set; }
         public string adress { get; set; }
         public DateTime Birth { get; set; }
-        public List<Certificate> LISTCertificates;
+        public List<Certificate> LISTCertificates { get; set; }
         public void Show(Employee e)
         {
 

@@ -26,6 +26,7 @@ namespace Quan_ly_nhan_vien
             Listnv.Add(new Fresher("R", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
             Listnv.Add(new Fresher("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
             Listnv.Add(new Fresher("L", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
+            Listnv.Add(new Fresher_exp("L", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
             Listnv.Add(new Intern("M","201","M","203 Nguyen Huy Tuong",DateTime.Parse("10/10/2000"),"HTTQL", "K65", "DHBK", new List<Certificate>()));
             Listnv.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
         }

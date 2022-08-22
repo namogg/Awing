@@ -8,6 +8,7 @@ namespace Quan_ly_nhan_vien
 {
     public class Fresher : Employee
     {
+        private Fresher fresher;
 
         public string Graduation_rank { get; set; }
         public string Education { get; set; }
@@ -27,6 +28,12 @@ namespace Quan_ly_nhan_vien
             Education = education;
             LISTCertificates = c;
         }
+
+        public Fresher(Fresher fresher)
+        {
+            this.fresher = fresher;
+        }
+
         public void Show(Fresher e)
         {
             Console.Write("Ten: ");

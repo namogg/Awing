@@ -58,7 +58,7 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap ngay sinh:");
             DateTime Birth = inputcheck.input_date();
             Console.WriteLine("Nhap so nam kinb nghiemn:");
-            int ExpInYear = inputcheck.input_num();
+            int ExpInYear = inputcheck.input_exprience_years();
             Console.WriteLine("Nhap ki nang:");
             string ProSkill = Console.ReadLine();
             List<Certificate> L = Certificate.Input_Certificates();
