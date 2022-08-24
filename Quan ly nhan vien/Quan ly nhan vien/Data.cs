@@ -8,27 +8,11 @@ namespace Quan_ly_nhan_vien
 {
     public  class Data
     {
-        public static void SeedData(ref List<Employee> Listnv)
+        public static void SeedData(ref List<Employee> List)
         {
-            Listnv.Add(new Fresher("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("Huy", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("Minh", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("A", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("B", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("C", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("D", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("E", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("E", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("F", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("G", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("H", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("S", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("R", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher("L", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), new List<Certificate>()));
-            Listnv.Add(new Fresher_exp("L", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
-            Listnv.Add(new Intern("M","201","M","203 Nguyen Huy Tuong",DateTime.Parse("10/10/2000"),"HTTQL", "K65", "DHBK", new List<Certificate>()));
-            Listnv.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
+            List.Add(new Fresher_exp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
+            List.Add(new Intern("ABC","201","M","203 Nguyen Huy Tuong",DateTime.Parse("10/10/2000"),"HTTQL", "K65", "DHBK", new List<Certificate>()));
+            List.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
         }
     }
 }

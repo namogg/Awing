@@ -5,7 +5,7 @@ public class program
 {
     public const int require_years = 5;
     public static List<Employee> Employees_List = new List<Employee>();
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {   
         //List nhan vien
         
@@ -23,19 +23,20 @@ public class program
             Console.WriteLine("5: Thang chuc cho nhan vien");
             Console.WriteLine("==============================");
             n = inputcheck.input_num();
+            function f = new function();
             switch (n)
             {
                 case 1:
-                    function.Print_Employee(Employees_List);
+                    f.Print_Employee(Employees_List);
                     break;
                 case 2:
                     function.Add_Employee(ref Employees_List);
                     break;
                 case 3:
-                    function.Delete_Employee(ref Employees_List);
+                    f.Delete_Employee(ref Employees_List);
                     break;
                 case 4:
-                    function.Update_Employee(ref Employees_List);
+                    f.Update_Employee(ref Employees_List);
                     break;
                 case 5:
                     function.promote_employee(ref Employees_List);
