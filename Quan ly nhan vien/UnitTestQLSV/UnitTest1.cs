@@ -153,6 +153,7 @@ namespace UnitTestQLSV
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(outputLines.Contains("So nam kinh nghiem phai tren 5"));
+            
         }
     }
 }
