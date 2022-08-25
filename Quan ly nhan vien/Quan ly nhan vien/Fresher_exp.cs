@@ -63,8 +63,7 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap so nam kinh nghiem");
             int exp = inputcheck.input_num();
             List<Certificate> L = Certificate.Input_Certificates();
-            Fresher fresher = new Fresher(Name, room, gender, adress, Birth, Graduation_rank, Education, Graduation_date, L);
-            return new Fresher_exp(fresher, exp,workdate);
+            return new Fresher_exp(Name, room, gender, adress, Birth, Graduation_rank, Education, Graduation_date,  exp,workdate,L);
         }
         public void Show(Fresher_exp e)
         {

@@ -30,7 +30,7 @@ public class program
                     f.Print_Employee(Employees_List);
                     break;
                 case 2:
-                    function.Add_Employee(ref Employees_List);
+                    f.Add_Employee(ref Employees_List);
                     break;
                 case 3:
                     f.Delete_Employee(ref Employees_List);
