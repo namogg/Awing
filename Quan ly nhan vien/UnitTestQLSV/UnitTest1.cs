@@ -104,22 +104,26 @@ namespace UnitTestQLSV
             f.Add_Employee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
-            Assert.IsTrue(employees.Count == 1);
+            Assert.IsTrue(employees.Count() == 1);
             Assert.IsTrue(outputLines.Contains("Them thanh cong nhan vien"));
             Fresher_exp fresher_Exp = (Fresher_exp)employees[0];
-            Assert.IsTrue(
-                fresher_Exp.Name == "Nguyen Thanh Nam"
-                && fresher_Exp.room == "201"
-                && fresher_Exp.gender == "M"
-                && fresher_Exp.adress == "203 Nguyen Huy Tuong"
-                && fresher_Exp.Birth == DateTime.Parse("10/10/ 2000")
-                && fresher_Exp.Graduation_date == DateTime.Parse("10/10/ 2000")
-                && fresher_Exp.Graduation_rank == "gioi"
-                && fresher_Exp.Education == "DHBK"
-                && fresher_Exp.Exp_Years == 4
-                && fresher_Exp.Workdate == DateTime.Parse("10/10/2019")
-
-                );
+            Assert.IsTrue(fresher_Exp.Name == "Nguyen Thanh Nam");
+        }
+        [Test]
+        public void Test_Add_Employee_Intern()
+        {
+            //arrange
+            List<Employee> employees = new List<Employee>();
+            function f = new function();
+            //act
+            User_respond("2", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "gioi", "DHBK", "HTTQL", "K65", "DHBK", "1", "HTTTQL", "Gioi", "1/1/2022");
+            f.Add_Employee(ref employees);
+            var outputLines = Console_output.ToString();
+            //assert
+            Assert.IsTrue(employees.Count() == 1);
+            Assert.IsTrue(outputLines.Contains("Them thanh cong nhan vien"));
+            Intern intern = (Intern)employees[0];
+            Assert.IsTrue(intern.Name == "Nguyen Thanh Nam");
         }
 
     }
