@@ -122,6 +122,7 @@ namespace Quan_ly_nhan_vien
             {   if (e[i] is Fresher_exp) 
                 {
                     Fresher_exp f = (Fresher_exp)(Fresher)e[i];
+                    //Total_EXP = EXP + Work_time
                     if (f.total_worktime >= program.require_years)
                     {   
                         Console.WriteLine(i + 1 + "." + f.Name +" || So nam kinh nghiem:" +f.total_worktime);

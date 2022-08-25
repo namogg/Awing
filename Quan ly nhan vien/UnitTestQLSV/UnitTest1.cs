@@ -116,7 +116,7 @@ namespace UnitTestQLSV
             List<Employee> employees = new List<Employee>();
             function f = new function();
             //act
-            User_respond("2", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "gioi", "DHBK", "HTTQL", "K65", "DHBK", "1", "HTTTQL", "Gioi", "1/1/2022");
+            User_respond("2", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "HTTQL", "K65", "DHBK", "1", "HTTTQL", "Gioi", "1/1/2022");
             f.Add_Employee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
@@ -125,6 +125,34 @@ namespace UnitTestQLSV
             Intern intern = (Intern)employees[0];
             Assert.IsTrue(intern.Name == "Nguyen Thanh Nam");
         }
-
+        [Test]
+        public void Test_Add_Employee_Experience()
+        {
+            //arrange
+            List<Employee> employees = new List<Employee>();
+            function f = new function();
+            //act
+            User_respond("3", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000","5","Code", "1", "HTTTQL", "Gioi", "1/1/2022");
+            f.Add_Employee(ref employees);
+            var outputLines = Console_output.ToString();
+            //assert
+            Assert.IsTrue(employees.Count() == 1);
+            Assert.IsTrue(outputLines.Contains("Them thanh cong nhan vien"));
+            Experience experience = (Experience)employees[0];
+            Assert.IsTrue(experience.Name == "Nguyen Thanh Nam");
+        }
+        [Test]
+        public void Test_Add_Employee_Experience_LowEXP_exeption()
+        {
+            //arrange
+            List<Employee> employees = new List<Employee>();
+            function f = new function();
+            //act
+            User_respond("3", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "1","5" ,"Code", "1", "HTTTQL", "Gioi", "1/1/2022");
+            f.Add_Employee(ref employees);
+            var outputLines = Console_output.ToString();
+            //assert
+            Assert.IsTrue(outputLines.Contains("So nam kinh nghiem phai tren 5"));
+        }
     }
 }
