@@ -39,7 +39,7 @@ public class program
                     f.Update_Employee(ref Employees_List);
                     break;
                 case 5:
-                    function.promote_employee(ref Employees_List);
+                    f.promote_employee(ref Employees_List);
                     break;
                 default:
                     return;

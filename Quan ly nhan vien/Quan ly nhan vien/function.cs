@@ -115,7 +115,7 @@ namespace Quan_ly_nhan_vien
             if (employees_List[i - 1] is Experience)
                 ((Experience)employees_List[i - 1]).Show((Experience)employees_List[i - 1]);
         }
-        public static void promote_employee(ref List<Employee> e)
+        public void promote_employee(ref List<Employee> e)
         {
             Console.WriteLine("=============Danh sach nhan vien duoc thang chuc=================");
             for (int i = 0; i < e.Count; i++)

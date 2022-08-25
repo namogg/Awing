@@ -155,5 +155,22 @@ namespace UnitTestQLSV
             Assert.IsTrue(outputLines.Contains("So nam kinh nghiem phai tren 5"));
             
         }
+        [Test]
+        public void Test_Promote_Employee()
+        {
+            //arrange
+            List<Employee> employees = new List<Employee>();
+            employees.Add(new Fresher_exp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
+            employees.Add(new Intern("ABC", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "HTTQL", "K65", "DHBK", new List<Certificate>()));
+            employees.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
+            function f = new function();
+            //act
+            User_respond("Code");
+            f.promote_employee(ref employees);
+            var outputLines = Console_output.ToString();
+            //assert
+            Assert.IsTrue(employees[0] is Experience);
+
+        }
     }
 }
