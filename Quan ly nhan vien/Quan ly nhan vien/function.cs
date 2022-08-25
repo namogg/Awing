@@ -19,7 +19,6 @@ namespace Quan_ly_nhan_vien
         //Ham them nhan vien
         public void Add_Employee(ref List<Employee> employees_List)
         {
-            Console.Clear();
             int n;
             Console.WriteLine("Nhap tuy chon");
             Console.WriteLine("1: Nhan vien Fresher");

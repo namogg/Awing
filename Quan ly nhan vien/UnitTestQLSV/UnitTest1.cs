@@ -110,16 +110,16 @@ namespace UnitTestQLSV
             Assert.IsTrue(
                 fresher_Exp.Name == "Nguyen Thanh Nam"
                 && fresher_Exp.room == "201"
-                &&  fresher_Exp.gender == "M"
+                && fresher_Exp.gender == "M"
                 && fresher_Exp.adress == "203 Nguyen Huy Tuong"
                 && fresher_Exp.Birth == DateTime.Parse("10/10/ 2000")
                 && fresher_Exp.Graduation_date == DateTime.Parse("10/10/ 2000")
-                &&  fresher_Exp.Graduation_rank == "gioi"
-                &&  fresher_Exp.Education == "DHBK"
-                &&  fresher_Exp.Exp_Years == 4
-                &&  fresher_Exp.Workdate == DateTime.Parse("10/10/2019")
+                && fresher_Exp.Graduation_rank == "gioi"
+                && fresher_Exp.Education == "DHBK"
+                && fresher_Exp.Exp_Years == 4
+                && fresher_Exp.Workdate == DateTime.Parse("10/10/2019")
 
-                )
+                );
         }
 
     }
