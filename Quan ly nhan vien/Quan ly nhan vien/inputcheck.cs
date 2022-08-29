@@ -8,7 +8,7 @@ namespace Quan_ly_nhan_vien
 {
     public class inputcheck
     {
-        public static DateTime input_date()
+        public static DateTime InputDate()
         {
             DateTime date = DateTime.Parse("1/1/2000");
                 try
@@ -18,27 +18,32 @@ namespace Quan_ly_nhan_vien
                 catch (FormatException)
                 {
                     Console.WriteLine("Ngay thang khong hop le, vui long nhap lai");
-                    return input_date();
+                    return InputDate();
                 }
             return date;
         }
-        public static int input_num()
-        {
+        public static int InputNumber()
+        {   
             int n=0;
                 try
                 {
                     n = Convert.ToInt32(Console.ReadLine());
+                    if (n < 0) 
+                    { 
+                    Console.WriteLine("Khong hop le, vui long nhap lai"); 
+                    return InputNumber(); 
+                    }
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Khong hop le, vui long nhap lai");
-                    return input_num();
+                    return InputNumber();
                 };
             return n;
         }
         public static int input_exprience_years()
         {
-            int n = input_num();
+            int n = InputNumber();
             if (n >= program.require_years)
             {
                 return n;

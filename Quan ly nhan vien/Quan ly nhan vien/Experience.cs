@@ -16,11 +16,11 @@ namespace Quan_ly_nhan_vien
             Console.Write("Ten: ");
             Console.WriteLine(e.Name);
             Console.Write("Phong: ");
-            Console.WriteLine(e.room);
+            Console.WriteLine(e.Room);
             Console.Write("Gioi tinh: ");
-            Console.WriteLine(e.gender);
+            Console.WriteLine(e.Gender);
             Console.Write("Dia chi: ");
-            Console.WriteLine(e.adress);
+            Console.WriteLine(e.Adress);
             Console.Write("Ngay thang nam sinh: ");
             Console.WriteLine(e.Birth);
             Console.Write("So nam kinh nghiem: ");
@@ -37,15 +37,15 @@ namespace Quan_ly_nhan_vien
         public Experience(string name, string Room, string Gender, string Adress, DateTime birth,int exp,string pro,List<Certificate> c)
         {
             Name = name;
-            room = Room;
-            gender = Gender;
-            adress = Adress;
+            base.Room = Room;
+            base.Gender = Gender;
+            base.Adress = Adress;
             Birth = birth;
             ExpInYear = exp;
             ProSkill = pro;
             LISTCertificates = c
 ;       }
-        public Experience input_Employee()
+        public Experience InputEmployee()
         {
             Console.WriteLine("Nhap ten:");
             string Name = Console.ReadLine();
@@ -56,12 +56,29 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap dia chi:");
             string adress = Console.ReadLine();
             Console.WriteLine("Nhap ngay sinh:");
-            DateTime Birth = inputcheck.input_date();
+            DateTime Birth = inputcheck.InputDate();
             Console.WriteLine("Nhap so nam kinh nghiemn:");
             int ExpInYear = inputcheck.input_exprience_years();
             Console.WriteLine("Nhap ki nang:");
             string ProSkill = Console.ReadLine();
-            List<Certificate> L = Certificate.Input_Certificates();
+            List<Certificate> L = Certificate.InputCertificates();
+            return new Experience(Name, room, gender, adress, Birth, ExpInYear, ProSkill, L);
+        }
+        public Experience InputEmployee(int ExpInYear)
+        {
+            Console.WriteLine("Nhap ten:");
+            string Name = Console.ReadLine();
+            Console.WriteLine("Nhap ten phong:");
+            string room = Console.ReadLine();
+            Console.WriteLine("Nhap gioi tinh:");
+            string gender = Console.ReadLine();
+            Console.WriteLine("Nhap dia chi:");
+            string adress = Console.ReadLine();
+            Console.WriteLine("Nhap ngay sinh:");
+            DateTime Birth = inputcheck.InputDate();
+            Console.WriteLine("Nhap ki nang:");
+            string ProSkill = Console.ReadLine();
+            List<Certificate> L = Certificate.InputCertificates();
             return new Experience(Name, room, gender, adress, Birth, ExpInYear, ProSkill, L);
         }
     }

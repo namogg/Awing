@@ -8,7 +8,7 @@ namespace Quan_ly_nhan_vien
 {
     public class function
     {
-        public static void show_Employee(List<Employee> e)
+        public static void ShowEmployee(List<Employee> e)
         {
             Console.WriteLine("==============================");
             for (int i = 0; i < e.Count; i++)
@@ -17,46 +17,58 @@ namespace Quan_ly_nhan_vien
             }
         }
         //Ham them nhan vien
-        public void Add_Employee(ref List<Employee> employees_List)
+        public void AddEmployee(ref List<Employee> EmployeesList)
         {
             int n;
             Console.WriteLine("Nhap tuy chon");
-            Console.WriteLine("1: Nhan vien Fresher");
+            Console.WriteLine("1: Nhan vien chinh thuc");
             Console.WriteLine("2: Nhan vien Intern");
-            Console.WriteLine("3: Nhan vien Experience");
             Console.WriteLine("==============================");
             n = Convert.ToInt32(Console.ReadLine());
 
             switch (n)
             {
                 case 1:
-                    Fresher_exp e = new Fresher_exp();
-                    employees_List.Add(e.input_Employee());
+                    InputOfficialEmployee(ref EmployeesList);
                     break;
                 case 2:
                     Intern I = new Intern();
-                    employees_List.Add(I.input_Employee());
-                    break;
-                case 3:
-                    Experience E = new Experience();
-                    employees_List.Add(E.input_Employee());
+                    EmployeesList.Add(I.InputEmployee());
                     break;
                 default:
                     return;
             }
             Console.WriteLine("Them thanh cong nhan vien");
         }
-        //Ham xoa nhan vien
-        public bool Delete_Employee( ref List<Employee> employees_List)
+        public void InputOfficialEmployee(ref List<Employee> EmployeesList)
         {
-            show_Employee(employees_List);
+            Console.WriteLine("Nhap so nam kinh nghiem");
+            int Exp = inputcheck.InputNumber();
+            if (Exp < program.require_years)
+            {   
+                FresherExp e = new FresherExp();
+                e.ExpInYears = Exp;
+                EmployeesList.Add(e.InputEmployee(Exp));
+                return;
+            } else
+            {
+                Experience E = new Experience();
+                E.ExpInYear = Exp;
+                EmployeesList.Add(E.InputEmployee(Exp));
+                return;
+            }
+        }
+        //Ham xoa nhan vien
+        public bool DeleteEmployee( ref List<Employee> employees_List)
+        {
+            ShowEmployee(employees_List);
             if(employees_List.Count == 0)
             {
                 Console.WriteLine("Danh sach rong");
                 return true;
             }
             Console.WriteLine("Xoa nhan vien thu:");
-            int n = inputcheck.input_num();
+            int n = inputcheck.InputNumber();
             if (n > employees_List.Count || n <= 0)
             {
                 Console.WriteLine("So thu tu khong hop le");
@@ -67,11 +79,11 @@ namespace Quan_ly_nhan_vien
             return true;
         }
         //Ham update nhan vien
-        public void Update_Employee(ref List<Employee> employees_List)
+        public void UpdateEmployee(ref List<Employee> employees_List)
         {
-            show_Employee(employees_List);
+            ShowEmployee(employees_List);
             Console.WriteLine("Update nhan vien thu:");
-            int i = inputcheck.input_num();
+            int i = inputcheck.InputNumber();
             if (i > employees_List.Count || i <= 0)
             {
                 Console.WriteLine("So thu tu khong hop le");
@@ -80,55 +92,56 @@ namespace Quan_ly_nhan_vien
             if (employees_List[i - 1] is Fresher)
             {
                 Fresher e = new Fresher();
-                employees_List[i - 1] = e.input_Employee();
+                employees_List[i - 1] = e.InputEmployee();
                 return;
             }
             if (employees_List[i - 1] is Intern)
             {
                 Intern e = new Intern();
-                employees_List[i - 1] = e.input_Employee();
+                employees_List[i - 1] = e.InputEmployee();
                 return;
             }
             if (employees_List[i - 1] is Experience)
             {
                 Intern e = new Intern();
-                employees_List[i - 1] = e.input_Employee();
+                employees_List[i - 1] = e.InputEmployee();
                 return;
             }
         }
         //Ham in nhan vien theo so thu tu 
-        public void Print_Employee(List<Employee> employees_List)
+        public void PrintEmployee(List<Employee> employees_List)
         {
             Console.WriteLine("Nhap so thu tu cua nhan vien ban muon hien thi thong tin");
-            int i = inputcheck.input_num();
+            int i = inputcheck.InputNumber();
             if (i > employees_List.Count || i <= 0)
             {
                 Console.WriteLine("So thu tu khong hop le");
                 return;
             }
-            if (employees_List[i - 1] is Fresher_exp)
+            if (employees_List[i - 1] is FresherExp)
             {   
-                ((Fresher_exp)employees_List[i - 1]).Show((Fresher_exp)employees_List[i - 1]);
+                ((FresherExp)employees_List[i - 1]).Show((FresherExp)employees_List[i - 1]);
             }
             if (employees_List[i - 1] is Intern)
                 ((Intern)employees_List[i - 1]).Show((Intern)employees_List[i - 1]);
             if (employees_List[i - 1] is Experience)
                 ((Experience)employees_List[i - 1]).Show((Experience)employees_List[i - 1]);
         }
-        public void promote_employee(ref List<Employee> e)
+        public void PromoteEmployee(ref List<Employee> e)
         {
-            Console.WriteLine("=============Danh sach nhan vien duoc thang chuc=================");
+            int count = 0;
             for (int i = 0; i < e.Count; i++)
-            {   if (e[i] is Fresher_exp) 
+            {   if (e[i] is FresherExp) 
                 {
-                    Fresher_exp f = (Fresher_exp)(Fresher)e[i];
+                    FresherExp f = (FresherExp)(Fresher)e[i];
                     //Total_EXP = EXP + Work_time
                     if (f.total_worktime >= program.require_years)
-                    {   
-                        Console.WriteLine(i + 1 + "." + f.Name +" || So nam kinh nghiem:" +f.total_worktime);
-                        Console.WriteLine("Nhap ki nang chuyen mon cho nhan vien:");
-                        string pro_skill = Console.ReadLine();
-                        e[i] = new Experience(f.Name, f.room, f.gender, f.adress, f.Birth, f.total_worktime, pro_skill, f.LISTCertificates); 
+                    {
+                        if(count==0) Console.WriteLine("=============Danh sach nhan vien duoc thang chuc=================");
+                        Console.WriteLine(i + 1 + "." + f.Name + " || So nam kinh nghiem:" + f.total_worktime);
+                        string pro_skill = "Chua nhap ki nang chuyen mon, vui long update";
+                        e[i] = new Experience(f.Name, f.Room, f.Gender, f.Adress, f.Birth, f.total_worktime, pro_skill, f.LISTCertificates);
+                        count++;
                     }
                 }
             }

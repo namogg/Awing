@@ -53,12 +53,12 @@ namespace UnitTestQLSV
         {
             //arrange
             List<Employee> employees = new List<Employee>();
-            employees.Add(new Fresher_exp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
+            employees.Add(new FresherExp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
             employees.Add(new Intern("ABC", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "HTTQL", "K65", "DHBK", new List<Certificate>()));
             employees.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
             function f = new function();
             User_respond("100");
-            f.Print_Employee(employees);
+            f.PrintEmployee(employees);
             //act
             var expect_putput = "So thu tu khong hop le";
             var outputLines = Console_output.ToString();
@@ -74,20 +74,20 @@ namespace UnitTestQLSV
             function f = new function();
             //act
             //assert
-            Assert.IsTrue(f.Delete_Employee(ref employees));
+            Assert.IsTrue(f.DeleteEmployee(ref employees));
         }
         [Test]
         public void Test_Delete_List()
         {
             //arrange
             List<Employee> employees = new List<Employee>();
-            employees.Add(new Fresher_exp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
+            employees.Add(new FresherExp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
             employees.Add(new Intern("ABC", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "HTTQL", "K65", "DHBK", new List<Certificate>()));
             employees.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
             function f = new function();
             //act
             User_respond("1");
-            f.Delete_Employee(ref employees);
+            f.DeleteEmployee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(employees.Count == 2);
@@ -101,12 +101,12 @@ namespace UnitTestQLSV
             function f = new function();
             //act
             User_respond("1", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "gioi", "DHBK", "10/10/2000", "4" ,"10/10/2019","1","HTTTQL","Gioi","1/1/2022" );
-            f.Add_Employee(ref employees);
+            f.AddEmployee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(employees.Count() == 1);
             Assert.IsTrue(outputLines.Contains("Them thanh cong nhan vien"));
-            Fresher_exp fresher_Exp = (Fresher_exp)employees[0];
+            FresherExp fresher_Exp = (FresherExp)employees[0];
             Assert.IsTrue(fresher_Exp.Name == "Nguyen Thanh Nam");
         }
         [Test]
@@ -117,7 +117,7 @@ namespace UnitTestQLSV
             function f = new function();
             //act
             User_respond("2", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "HTTQL", "K65", "DHBK", "1", "HTTTQL", "Gioi", "1/1/2022");
-            f.Add_Employee(ref employees);
+            f.AddEmployee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(employees.Count() == 1);
@@ -133,7 +133,7 @@ namespace UnitTestQLSV
             function f = new function();
             //act
             User_respond("3", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000","5","Code", "1", "HTTTQL", "Gioi", "1/1/2022");
-            f.Add_Employee(ref employees);
+            f.AddEmployee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(employees.Count() == 1);
@@ -149,7 +149,7 @@ namespace UnitTestQLSV
             function f = new function();
             //act
             User_respond("3", "Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", "10/10/2000", "1","5" ,"Code", "1", "HTTTQL", "Gioi", "1/1/2022");
-            f.Add_Employee(ref employees);
+            f.AddEmployee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(outputLines.Contains("So nam kinh nghiem phai tren 5"));
@@ -160,13 +160,13 @@ namespace UnitTestQLSV
         {
             //arrange
             List<Employee> employees = new List<Employee>();
-            employees.Add(new Fresher_exp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
+            employees.Add(new FresherExp("Nguyen Thanh Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "gioi", "DHBK", DateTime.Parse("10/10/2000"), 4, DateTime.Parse("10/10/2019"), new List<Certificate>()));
             employees.Add(new Intern("ABC", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), "HTTQL", "K65", "DHBK", new List<Certificate>()));
             employees.Add(new Experience("Nam", "201", "M", "203 Nguyen Huy Tuong", DateTime.Parse("10/10/2000"), 1, "Code", new List<Certificate>()));
             function f = new function();
             //act
             User_respond("Code");
-            f.promote_employee(ref employees);
+            f.PromoteEmployee(ref employees);
             var outputLines = Console_output.ToString();
             //assert
             Assert.IsTrue(employees[0] is Experience);

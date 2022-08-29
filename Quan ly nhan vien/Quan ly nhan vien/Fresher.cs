@@ -19,9 +19,9 @@ namespace Quan_ly_nhan_vien
         public Fresher(string name, string Room, string Gender, string Adress, DateTime birth, string graduation_rank, string education, DateTime graduation_date, List<Certificate> c)
         {
             Name = name;
-            room = Room;
-            gender = Gender;
-            adress = Adress;
+            base.Room = Room;
+            base.Gender = Gender;
+            base.Adress = Adress;
             Birth = birth;
             Graduation_date = graduation_date;
             Graduation_rank = graduation_rank;
@@ -39,11 +39,11 @@ namespace Quan_ly_nhan_vien
             Console.Write("Ten: ");
             Console.WriteLine(e.Name);
             Console.Write("Phong: ");
-            Console.WriteLine(e.room);
+            Console.WriteLine(e.Room);
             Console.Write("Gioi tinh: ");
-            Console.WriteLine(e.gender);
+            Console.WriteLine(e.Gender);
             Console.Write("Dia chi: ");
-            Console.WriteLine(e.adress);
+            Console.WriteLine(e.Adress);
             Console.Write("Ngay thang nam sinh: ");
             Console.WriteLine(e.Birth);
             Console.Write("Xep hang tot nghiep ");
@@ -55,9 +55,7 @@ namespace Quan_ly_nhan_vien
             Certificate c = new Certificate();
             c.show(e.LISTCertificates);
         }
-        
-        
-        public Fresher input_Employee()
+        public Fresher InputEmployee()
         {
             Console.WriteLine("Nhap ten:");
             string Name = Console.ReadLine();
@@ -68,14 +66,14 @@ namespace Quan_ly_nhan_vien
             Console.WriteLine("Nhap dia chi:");
             string adress = Console.ReadLine();
             Console.WriteLine("Nhap ngay sinh:");
-            DateTime Birth = inputcheck.input_date();
+            DateTime Birth = inputcheck.InputDate();
             Console.WriteLine("Nhap ngay tot nghiep:");
-            DateTime Graduation_date = inputcheck.input_date();
+            DateTime Graduation_date = inputcheck.InputDate();
             Console.WriteLine("Nhap xep hang tot nghiep:");
             string Graduation_rank = Console.ReadLine();
             Console.WriteLine("Nhap truong tot nghiep:");
             string Education = Console.ReadLine();
-            List<Certificate> L = Certificate.Input_Certificates();
+            List<Certificate> L = Certificate.InputCertificates();
             return new Fresher(Name, room, gender, adress, Birth, Graduation_rank, Education, Graduation_date, L);
         }
     }

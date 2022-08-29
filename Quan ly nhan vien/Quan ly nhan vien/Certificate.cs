@@ -39,11 +39,11 @@ namespace Quan_ly_nhan_vien
                 show(e[i]);
             }
         }
-        public static List<Certificate> Input_Certificates()
+        public static List<Certificate> InputCertificates()
         {
             List<Certificate> Temp = new List<Certificate>();
             Console.WriteLine("Nhap so Certificate");
-            int n = inputcheck.input_num();
+            int n = inputcheck.InputNumber();
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine("Nhap bang thu:" + (i+1));
@@ -52,7 +52,7 @@ namespace Quan_ly_nhan_vien
                 Console.WriteLine("Nhap xep hang bang");
                 string CertificateRank = Console.ReadLine();
                 Console.WriteLine("Nhap ngay tot nghiep");
-                DateTime GraduationDate = inputcheck.input_date();
+                DateTime GraduationDate = inputcheck.InputDate();
                 Temp.Add(new Certificate(CertificateName, CertificateRank, GraduationDate));
             }
             return Temp;
